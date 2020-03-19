@@ -1,0 +1,42 @@
+allprojects {
+
+    apply plugin: 'java'
+
+    group = 'com.yuan'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    ext {
+        springVersion = '5.2.4.RELEASE'
+        springbootVersion = '2.2.5.RELEASE'
+        mysqlConnectorVersion = '8.0.19'
+        fastjsonVersion = '1.2.62'
+        dubboVersion = '2.6.5'
+        zkclientVersion = '0.10'
+        dubboStarterVersion = '0.2.0'
+        lang3Version = '3.9'
+        mybatisPlusVersion = '3.2.0'
+        lombokVersion = '1.18.10'
+        junitVersion = '4.12'
+    }
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+    }
+
+    dependencies {
+    implementation 'junit:junit:4.12'
+        implementation 'org.junit.jupiter:junit-jupiter'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

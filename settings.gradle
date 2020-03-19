@@ -1,0 +1,7 @@
+rootProject.name = 'mall'
+include 'mall-api'
+include 'mall-common-util'
+include 'mall-service-util'
+include 'mall-web-util'
+include 'mall-user-service'
+include 'mall-user-web'
