@@ -18,19 +18,15 @@ public class PmsFileUpLoadUtil {
 
     public static final String TRACKER_IPADDR = "http://192.168.145.30";
 
+    private static StorageClient storageClient;
+
     public static String uploadImg(MultipartFile file) throws IOException, MyException {
 
         StringBuilder imgUrl = new StringBuilder(TRACKER_IPADDR + "");
 
-        String path = PmsFileUpLoadUtil.class.getResource("/tracker.conf").getPath();
-
-        ClientGlobal.init(path);
-
-        TrackerClient trackerClient = new TrackerClient();
-
-        TrackerServer server = trackerClient.getConnection();
-
-        StorageClient storageClient = new StorageClient(server, null);
+        if (storageClient == null) {
+            storageClient = getStorageClient();
+        }
 
         byte[] fileBytes = file.getBytes();
 
@@ -43,5 +39,19 @@ public class PmsFileUpLoadUtil {
         }
 
         return imgUrl.toString();
+    }
+
+    private static StorageClient getStorageClient() throws IOException, MyException {
+
+        String path = PmsFileUpLoadUtil.class.getResource("/tracker.conf").getPath();
+
+        ClientGlobal.init(path);
+
+        TrackerClient trackerClient = new TrackerClient();
+
+        TrackerServer server = trackerClient.getConnection();
+
+        return new StorageClient(server, null);
+
     }
 }
