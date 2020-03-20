@@ -32,8 +32,8 @@ allprojects {
     }
 
     dependencies {
-    implementation 'junit:junit:4.12'
-        implementation 'org.junit.jupiter:junit-jupiter'
+        implementation 'junit:junit:4.12'
+        testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.6.0'
     }
 }
 

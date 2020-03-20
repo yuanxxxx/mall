@@ -1,0 +1,9 @@
+ext {
+	fastdfsVersion = '1.27.0.0'
+}
+
+dependencies {
+	compile group: 'net.oschina.zcx7878', name: 'fastdfs-client-java', version: "${fastdfsVersion}"
+	compile project(":mall-web-util")
+	compile project(":mall-api")
+}
