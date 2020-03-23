@@ -2,7 +2,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile project(":mall-api")
     compile project(":mall-common-util")
-    runtimeOnly "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+    compile group: 'redis.clients', name: 'jedis', version: "${jedisVersion}"
+//    runtimeOnly "mysql:mysql-connector-java:${mysqlConnectorVersion}"
 //    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: "${mybatisPlusVersion}"
 //    compile group: 'org.projectlombok', name: 'lombok', version: "${lombokVersion}"
 }
