@@ -7,3 +7,5 @@ include 'mall-user-service'
 include 'mall-user-web'
 include 'mall-manage-web'
 include 'mall-manage-service'
+include 'mall-mbg'
+

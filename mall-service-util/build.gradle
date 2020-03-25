@@ -3,7 +3,10 @@ dependencies {
     compile project(":mall-api")
     compile project(":mall-common-util")
     compile group: 'redis.clients', name: 'jedis', version: "${jedisVersion}"
-//    runtimeOnly "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+    runtimeOnly "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+    compile group: 'org.apache.ibatis', name: 'ibatis-core', version: '3.0'
+    compile group: 'io.swagger', name: 'swagger-annotations', version: '1.5.22'
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: "${mybatisVersion}"
 //    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: "${mybatisPlusVersion}"
 //    compile group: 'org.projectlombok', name: 'lombok', version: "${lombokVersion}"
 }
